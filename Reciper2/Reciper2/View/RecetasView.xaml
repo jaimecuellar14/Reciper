@@ -6,10 +6,28 @@
              mc:Ignorable="d"
              x:Class="Reciper2.View.RecetasView">
   <ContentView.Content>
-      <StackLayout>
-          <Label Text="Vista de recetas"
+        <StackLayout>
+            <Label Text="{Binding mensaje}"
                  VerticalOptions="CenterAndExpand"
                  HorizontalOptions="Center"/>
-      </StackLayout>
+            <ListView x:Name="ListaRecetas"
+                      VerticalOptions="Center"
+                      HorizontalOptions="Center"
+                      ItemsSource="{Binding Recetas}"
+                      SelectionMode="Single"
+                      ItemTapped="ListaRecetas_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell Text="{Binding nombreReceta}"
+                                   ImageSource="{Binding fotoReceta}"
+                                   Height="60"
+                                   >
+                                  
+                        </ImageCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        
   </ContentView.Content>
 </ContentView>
