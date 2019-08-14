@@ -14,20 +14,11 @@ namespace Reciper2.View
     public partial class RecetaView : ContentPage
     {
 
-        string foto = "";
-        string nombre = "";
-        public string Foto { get { return foto; } }
-        public string Nombre { get { return nombre; } }
-        public RecetaView(RecetasModel receta)
+        
+        public RecetaView()
         {
             InitializeComponent();
-            getData(receta);
-        }
-
-        public void getData(RecetasModel receta)
-        {
-            foto = receta.fotoReceta;
-            nombre = receta.nombreReceta;
+            
         }
     }
 }

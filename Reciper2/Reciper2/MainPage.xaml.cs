@@ -21,7 +21,6 @@ namespace Reciper2
 
         async private void Button_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("Alert", "Redireccionando al inicio", "Ok");
             await Navigation.PushAsync(new InicioPage(), true);
         }
     }

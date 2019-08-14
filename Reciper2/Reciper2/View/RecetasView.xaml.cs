@@ -45,9 +45,11 @@ namespace Reciper2.View
 
         private async void ListaRecetas_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var selectedItem = e.Item as RecetasModel;
-            RecetasModel receta =  selectedItem;
-            await Navigation.PushAsync(new RecetaView(receta));
+            RecetasModel selectedItem = e.Item as RecetasModel;
+            var recetaView = new RecetaView();
+            recetaView.BindingContext = selectedItem;
+            await Navigation.PushAsync(recetaView,true);
+
         }
     }
 }

@@ -12,10 +12,10 @@
                    HorizontalOptions="Center">
                 
             </Label>
-            <Label Text="{Binding Nombre}"
+            <Label Text="{Binding nombreReceta}"
                 VerticalOptions="Center" 
                 HorizontalOptions="CenterAndExpand" />
-            <Image Source="{Binding Foto}"
+            <Image Source="{Binding fotoReceta}"
                    VerticalOptions="Center"
                    HorizontalOptions="StartAndExpand">
             </Image>
