@@ -8,21 +8,20 @@
   <ContentView.Content>
         <StackLayout>
             <Label Text="{Binding mensaje}"
-                 VerticalOptions="CenterAndExpand"
+                 VerticalOptions="Center"
                  HorizontalOptions="Center"/>
             <ListView x:Name="ListaRecetas"
                       VerticalOptions="Center"
                       HorizontalOptions="Center"
                       ItemsSource="{Binding Recetas}"
                       SelectionMode="Single"
-                      ItemTapped="ListaRecetas_ItemTapped">
+                      ItemTapped="ListaRecetas_ItemTapped"
+                      RowHeight="60">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ImageCell Text="{Binding nombreReceta}"
+                        <ImageCell Text="{Binding nombreReceta, StringFormat='Receta de {0:F0}'}"
                                    ImageSource="{Binding fotoReceta}"
-                                   Height="60"
                                    >
-                                  
                         </ImageCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
