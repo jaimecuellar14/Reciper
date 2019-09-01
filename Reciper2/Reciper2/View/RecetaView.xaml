@@ -7,32 +7,55 @@
              mc:Ignorable="d"
              x:Class="Reciper2.View.RecetaView">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Prueba de compartir datos xamarin"
-                   VerticalOptions="Start"
-                   HorizontalOptions="Center">
 
-            </Label>
+
+        <StackLayout>
             <Label Text="{Binding nombreReceta, StringFormat='Recetas de {0:F0}'}"
                 VerticalOptions="Center" 
                 HorizontalOptions="CenterAndExpand" />
-            <Image Source="{Binding fotoReceta}"
+                <Image Source="{Binding fotoReceta}"
                    VerticalOptions="Center"
                    HorizontalOptions="CenterAndExpand">
-            </Image>
+                </Image>
+            <Label     x:Name="indicaciones"
+                       Text="Presiona para obtener mas informacion de la receta."
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="Center"
+                       IsVisible="False">
+            </Label>
+            <Label x:Name="loadingText"
+                   Text="Espera mientras cargan las recetas"
+                   IsVisible="False"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center">
+                
+            </Label>
+            <ActivityIndicator x:Name="loadingIndicator"
+                               IsVisible="False"
+                               IsRunning="False"
+                               IsEnabled="False"
+                               Color="Black"
+                               VerticalOptions="CenterAndExpand"
+                               HorizontalOptions="CenterAndExpand"
+                               Scale="0.5">
+            </ActivityIndicator>
             <ListView     x:Name="listadoRecetas"
+                          Margin="10"
+                          ItemTapped="ListadoRecetas_ItemTapped"
                           VerticalOptions="Center"
                           HorizontalOptions="StartAndExpand"
                           ItemsSource="{Binding RecetasList}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <TextCell Detail="{Binding nombre}"
-                                  Text="{Binding calorias}">
-                            
-                        </TextCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell 
+                                   Text="{Binding nombre}"
+                                   ImageSource="{Binding imagen}">
+
+                            </ImageCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
