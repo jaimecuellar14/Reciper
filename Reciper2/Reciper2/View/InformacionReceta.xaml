@@ -3,11 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:cards="clr-namespace:PanCardView;assembly=PanCardView"
              mc:Ignorable="d"
              x:Class="Reciper2.View.InformacionReceta">
+    
     <ContentPage.Content>
         <StackLayout>
             <Image Source="{Binding imagen}"
+                   HorizontalOptions="CenterAndExpand"
                    >
             </Image>
             <Label Text="{Binding nombre}"
@@ -17,7 +20,85 @@
                    
                    HorizontalOptions="CenterAndExpand">
             </Label>
+           <!--< <StackLayout Orientation="Horizontal"
+                         Padding="30">
+                <Label Text="Ingredientes"
+                   HorizontalOptions="StartAndExpand">
+            </Label>
+            <Label Text="Informacion dietetica"
+                   HorizontalOptions="CenterAndExpand">
+
+            </Label>
+            <Label Text="Informacion nutricional"
+                   HorizontalOptions="EndAndExpand">
+            </Label>
+            </StackLayout>
+            <StackLayout></StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         >
+                
+                <ListView x:Name="listaIngredientes"
+                          ItemsSource="{Binding ingredientes}"
+                          HasUnevenRows="True">
+                </ListView>
+                
+                <ListView x:Name="informacionDietetica"
+                          ItemsSource="{Binding especificacionesDieteticas}"
+                          HasUnevenRows="True">
+                </ListView>
+                
+                <ListView x:Name="informacionNutricional"
+                          ItemsSource="{Binding especificacionesSanitarias}"
+                          HasUnevenRows="True">
+                    
+                </ListView>
+                
+                   
+            </StackLayout>-->
+            <StackLayout>
+                <StackLayout>
+                    <Label Text="Ingredientes"
+                   HorizontalOptions="CenterAndExpand">
+                    </Label>
+                    <ListView x:Name="listaIngredientes"
+                          ItemsSource="{Binding ingredientes}"
+                          VerticalOptions="FillAndExpand">
+                    </ListView>
+                </StackLayout>
             
+
+            
+                <StackLayout>
+                    <Label Text="Informacion dietetica"
+                   HorizontalOptions="CenterAndExpand">
+
+                    </Label>
+                    <ListView x:Name="informacionDietetica"
+                          ItemsSource="{Binding especificacionesDieteticas}"
+                              VerticalOptions="FillAndExpand">
+                    </ListView>
+                </StackLayout>
+            
+
+            
+                <StackLayout>
+                    <Label Text="Informacion nutricional"
+                   HorizontalOptions="CenterAndExpand">
+                    </Label>
+                    <ListView x:Name="informacionNutricional"
+                          ItemsSource="{Binding especificacionesSanitarias}"
+                          VerticalOptions="FillAndExpand">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextCell Text="{Binding}">
+                                    
+                                </TextCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
+    
 </ContentPage>

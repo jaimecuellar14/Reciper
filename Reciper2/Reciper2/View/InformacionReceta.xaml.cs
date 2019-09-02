@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Reciper2.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace Reciper2.View
         public InformacionReceta()
         {
             InitializeComponent();
+            //var receta = this.BindingContext as RecetaModel;
+           // listaIngredientes.ItemsSource = receta.ingredientes;
         }
     }
 }
